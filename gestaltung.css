@@ -1,0 +1,283 @@
+:root {
+  --color-background: #f4efe6;
+  --color-card: #ffffff;
+  --color-text: #262523;
+  --color-accent: #0f7a6b;
+  --color-accent-light: #d2efe8;
+  --color-border: #d3c9bd;
+  --color-error: #b2413a;
+}
+
+[data-theme="dark"] {
+  --color-background: #14171b;
+  --color-card: #1c2329;
+  --color-text: #eef1f3;
+  --color-accent: #4ac9b2;
+  --color-accent-light: #193833;
+  --color-border: #2b353e;
+  --color-error: #e07a73;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Bahnschrift", "Segoe UI", sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+h1,
+h2 {
+  margin: 0 0 10px;
+}
+
+.page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 24px 32px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.top-card {
+  width: 100%;
+}
+
+.search-card {
+  width: 100%;
+}
+
+.inputs-wide {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: end;
+}
+
+.inputs-wide .field {
+  min-width: 0;
+}
+
+.inputs-wide input {
+  width: 100%;
+}
+
+.actions-wide {
+  justify-content: flex-start;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 2fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.status {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.inputs {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+}
+
+input:focus-visible {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(15, 122, 107, 0.2);
+}
+
+input.invalid {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(178, 65, 58, 0.2);
+}
+
+.error {
+  min-height: 18px;
+  font-size: 0.82rem;
+  color: var(--color-error);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  border-radius: 8px;
+  padding: 8px 14px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+.secondary {
+  background: var(--color-accent-light);
+  color: var(--color-text);
+}
+
+.primary:disabled,
+.secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  min-height: 18px;
+}
+
+.station-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.station-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.station-button.selected {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent);
+}
+
+.station-name {
+  font-weight: 600;
+}
+
+.station-distance {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.chart {
+  border-radius: 10px;
+  border: 1px dashed var(--color-border);
+  padding: 12px;
+}
+
+.chart-placeholder {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.result-chart {
+  display: grid;
+  gap: 8px;
+}
+
+.legend {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.table-area {
+  margin-top: 0;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.data-table th {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.table-empty {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
