@@ -1,5 +1,9 @@
 Hinweise für den Test der Anwendung
 
-Bitte die Ordnerstruktur so lassen, wie sie im Repository vorliegt. Eine Ausnahme: Dockerfile und docker-compose.yml müssen im Root bleiben und nicht in einen Unterordner verschoben werden.
+Bitte die Ordnerstruktur so lassen, wie sie im Repository vorliegt. 
 
-Zum Testen die Anwendung ganz normal über Docker Compose starten und anschließend im Browser unter localhost:8080 öffnen.
+PowerShell Startbefehl:
+docker compose up --build -d; Start-Process http://localhost:8080/
+
+PowerShell Stopbefehl:
+docker compose down
