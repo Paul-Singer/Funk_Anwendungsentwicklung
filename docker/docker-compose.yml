@@ -1,0 +1,11 @@
+services:
+  ghcn:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data
+    environment:
+      - DATA_DIR=/data
+      - PORT=8080
+      - WEB_CONCURRENCY=2
