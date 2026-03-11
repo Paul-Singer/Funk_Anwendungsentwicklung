@@ -7,11 +7,13 @@ Internetverbindung ist vorhanden.
 
 
 
+
 Projektordnerstruktur:
 
 Dockerfile und docker-compose.yml liegen im Root-Verzeichnis des Repositories.
 
 Die Ordnerstruktur bitte genauso beibehalten, wie sie in GitHub vorgegeben ist.
+
 
 
 
